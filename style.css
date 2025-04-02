@@ -1,0 +1,460 @@
+/* Basic Reset & Defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 0.8em;
+    color: #1a3a6d; /* A professional blue */
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; text-align: center; margin-bottom: 1em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.1em; color: #555; }
+
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: #0077cc; /* Link color */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    padding: 60px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.container { /* Optional helper class if needed */
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden; /* Clear floats */
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #1a3a6d; /* Dark blue background */
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky; /* Makes the navbar stick to the top */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 0.5rem 0.8rem;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+nav ul li a:hover,
+nav ul li a.active { /* Style for active link (requires JS) */
+    background-color: #005fa3; /* Slightly lighter blue on hover/active */
+    text-decoration: none;
+}
+
+/* Hero Section */
+#hero {
+    background-color: #e9ecef; /* Light grey background */
+    padding: 80px 20px;
+    text-align: left;
+}
+
+.hero-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Space between picture and info */
+}
+
+.hero-picture {
+    flex-basis: 250px; /* Fixed width for picture container */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.hero-picture img {
+    border-radius: 50%; /* Circular picture */
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.hero-info {
+    flex-grow: 1; /* Takes remaining space */
+}
+
+.hero-info h1 {
+    margin-bottom: 0.2em;
+}
+.hero-info h2 {
+    text-align: left;
+    margin-bottom: 0.8em;
+    color: #555;
+    font-weight: normal;
+}
+
+.hero-info .bio {
+    margin-bottom: 1.5em;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.contact-details {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-details li {
+    margin-bottom: 0.5em;
+    color: #444;
+}
+
+.contact-details li strong {
+    display: inline-block;
+    min-width: 120px; /* Align text */
+    color: #333;
+}
+.contact-details li i { /* Style icons */
+    margin-right: 8px;
+    color: #1a3a6d;
+    width: 20px; /* Ensure icons align */
+    text-align: center;
+}
+
+
+/* Skills Section */
+#skills {
+     background-color: #fff;
+}
+
+.skills-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around; /* Distribute space */
+}
+
+.skill-category {
+    flex: 1; /* Allow categories to grow */
+    min-width: 280px; /* Minimum width before wrapping */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.skill-category h3 {
+    border-bottom: 2px solid #1a3a6d;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.skill-category ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.skill-category ul li i {
+    margin-right: 10px;
+    color: #0077cc;
+    width: 20px;
+    text-align: center;
+}
+
+/* Portfolio Section */
+#portfolio {
+    background-color: #e9ecef;
+}
+
+.portfolio-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    /* Responsive grid: Adjust minmax value as needed */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Contain image and content */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 300px; /* Fixed height for images */
+    object-fit: cover; /* Cover the area without distortion */
+}
+
+.portfolio-item h3 {
+    margin: 15px 15px 10px 15px;
+    font-size: 1.3em;
+}
+
+.portfolio-item p {
+    margin: 0 15px 15px 15px;
+    flex-grow: 1; /* Allow description to take available space */
+    color: #555;
+}
+
+.portfolio-item .btn {
+    display: block;
+    background-color: #0077cc;
+    color: #fff;
+    text-align: center;
+    padding: 10px 15px;
+    margin: 15px; /* Margin around the button */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    align-self: flex-start; /* Align button to the start */
+}
+
+.portfolio-item .btn:hover {
+    background-color: #005fa3;
+    text-decoration: none;
+}
+
+/* Experience Section */
+#experience {
+    background-color: #fff;
+    max-width: 900px; /* Narrower for readability */
+    margin: auto;
+}
+#experience h2 {
+    text-align: left; /* Align header left for timeline feel */
+    margin-left: 10px; /* Slight indent */
+}
+
+
+.experience-item {
+    margin-bottom: 30px;
+    padding-left: 25px; /* Space for potential timeline line */
+    position: relative;
+    border-left: 3px solid #1a3a6d; /* Timeline effect */
+}
+
+/* Add a circle marker for the timeline */
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: -9px; /* Position over the line */
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #1a3a6d;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.experience-item h3 {
+    margin-bottom: 0.2em;
+}
+
+.experience-item h4 {
+    margin-bottom: 0.8em;
+    font-style: italic;
+    color: #666;
+}
+
+.experience-item ul {
+    list-style: disc;
+    padding-left: 20px; /* Indent list items */
+}
+
+.experience-item ul li {
+    margin-bottom: 0.5em;
+    color: #555;
+}
+
+/* Contact Section (within Footer area) */
+.contact-section {
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+.contact-section h2 {
+    margin-bottom: 1em;
+}
+
+.contact-section p {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    background-color: #1a3a6d;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: #ccc;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.3em; }
+
+    /* Adjust Nav for mobile */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav .logo {
+        margin-bottom: 10px;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        display: block; /* Make links full width */
+    }
+
+    /* Stack Hero Section items */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-picture {
+        margin-bottom: 20px;
+        flex-basis: auto; /* Reset basis */
+    }
+     .hero-picture img {
+       width: 200px; /* Slightly smaller image on mobile */
+       height: 200px;
+    }
+    .hero-info h1, .hero-info h2 {
+        text-align: center;
+    }
+     .hero-info .contact-details li strong{
+        display: block; /* Stack label and value */
+        min-width: auto;
+        margin-bottom: 2px;
+     }
+      .hero-info .contact-details li i{
+        display: none; /* Hide icons on small screens if needed */
+     }
+
+
+    /* Skills section adjust */
+    .skills-container {
+        flex-direction: column; /* Stack categories */
+        gap: 20px;
+    }
+
+    /* Portfolio grid adjust */
+    .portfolio-grid {
+        /* Let auto-fit handle it, but maybe reduce minmax */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    /* Experience section padding */
+    #experience {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .experience-item {
+        padding-left: 20px;
+    }
+     .experience-item::before {
+       left: -8px;
+     }
+
+}
