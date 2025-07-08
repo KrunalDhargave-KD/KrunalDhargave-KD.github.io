@@ -384,8 +384,9 @@ footer p {
     h2 { font-size: 1.8em; }
     h3 { font-size: 1.3em; }
 
-    /* Adjust Nav for mobile
+    /* Adjust Nav for mobile */
     nav {
+        display:none;
         flex-direction: column;
         align-items: center;
     }
@@ -398,14 +399,15 @@ footer p {
         width: 100%;
     }
     nav ul li {
+        display:none;
         margin: 5px 0;
         width: 100%;
         text-align: center;
     }
     nav ul li a {
-        display: block; /* Make links full width 
+        display: none; /* Make links full width */
     }
- */
+ 
 
     /* Stack Hero Section items */
     .hero-container {
